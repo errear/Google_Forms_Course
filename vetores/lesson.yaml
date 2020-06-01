@@ -178,7 +178,7 @@
 
 - Class: mult_question
   Output: Você gostaria de enviar ao seu instrutor, o registro da sua conclusão bem sucedida desta lição via formulários Google? Isto o permitirá avaliar seu progresso.
-  AnswerChoices: Yes;No
-  CorrectAnswer: NULL
+  AnswerChoices: Sim;Não
+  CorrectAnswer: Sim
   AnswerTests: submit_log()
   Hint: hint
