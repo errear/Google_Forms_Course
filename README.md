@@ -12,6 +12,8 @@ library(devtools)
 install_github("swirldev/swirl", ref = "dev")
 library(swirl)
 install_course_github("errear", "adar-errear")
+select_language(language = "portuguese")
+swirl()
 ```
 
 
