@@ -9,26 +9,11 @@ Este curso está em construção e você pode encontrar problemas durante a exec
 ```{r install-adar-errear}
 install.packages(c("devtools", "base64enc", "httr"))
 library(devtools)
+install_github("swirldev/swirl", ref = "dev")
+library(swirl)
 install_course_github("errear", "adar-errear")
-swirl()
 ```
 
-## Use Google Forms in Your Course
-
-Follow these steps in order to set up a Google
-Form that can collect student's swirl progress:
-
-1. Create a new form by clicking "New" on https://drive.google.com
-2. Name your form something memorable.
-3. Your form should have only one question which should be a paragraph type 
-question.
-4. In the upper right corner of the form there should be three vertical white
-dots. Click on that icon and then click "Get pre-filled link." This will open
-a new window.
-5. Click "Submit" and copy the generated link.
-6. Paste the generated link into `customTests.R` where indicated, so that a
-string containing the link is assigned to the `pre_fill_link` variable in the
-function `submit_log()`.
 
 ## Key Points in this Repo:
 
