@@ -1,15 +1,15 @@
-# swirl & Google Forms
+# Atividades do Curso ADAR (adar-errear) com o swirl
 
-This course demonstrates how to use the new logging feature in swirl with Google
-Forms.  This is a simple way for course instructors to monitor how their students
-are performing in swirl courses. 
+O **adar-errear** é um curso que usa a abordagem prática do pacote swirl. Ele serve para você praticar R (ou "errear") e para eu poder acompanhar seu andamento nas tarefas. A maioria das lições deste curso inclui diversos tópicos vistos no curso ADAR. As lições disponibilizadas estão sendo traduzidas do curso [Programando em R](https://github.com/swirldev/swirl_courses/tree/master/R_Programming). 
 
-## Install this Course
+Este curso está em construção e você pode encontrar problemas durante a execução. Qualquer problema, por gentileza, avise-me para que possa corrigi-lo e adaptá-lo da melhor forma possível para o nosso curso.
 
-```r
-# install.packages("swirl")
-library(swirl)
-install_course_github("seankross", "Google_Forms_Course")
+## Instalação deste curso
+
+```{r install-adar-errear}
+install.packages(c("devtools", "base64enc", "httr"))
+library(devtools)
+install_course_github("errear", "adar-errear")
 swirl()
 ```
 
