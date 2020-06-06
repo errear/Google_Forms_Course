@@ -5,5 +5,5 @@
 swirl::swirl_options(
   swirl_logging = TRUE, 
   language = "portuguese", 
-  swirl_data_dir = getwd()
+  swirl_data_dir = "~/"
 )
