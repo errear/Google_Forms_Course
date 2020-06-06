@@ -10,6 +10,73 @@
       # variables when appropriate. The answer test, creates_new_var()
       # can be used for for the purpose, but it also re-evaluates the
       # expression which the user entered, so care must be taken.
+#------------------------------------------------------------------------------
+
+
+# Get the swirl state
+getState <- function() {
+  # Whenever swirl is running, its callback is at the top of its call stack.
+  # Swirl's state, named e, is stored in the environment of the callback.
+  environment(sys.function(1))$e
+}
+
+# Retrieve the log from swirl's state
+getLog <- function() {
+  getState()$log
+}
+
+
+# source: https://github.com/tomatebio/Programando_em_R
+submit_log <- function() {
+  yn <- select.list(c("Sim", "Não"), graphics = FALSE)
+  if (yn == "Não") {
+    cat("Não será enviado")
+    return(TRUE)
+  }
+  
+  cat("Preparando o envio ...\n")
+  library(googlesheets4)
+  #suppressMessages(library(dplyr))
+  
+  # Do not edit the code below
+  
+  p <- function(x, p, f, l = length(x)) {
+    if (l < p) {
+      x <- c(x, rep(f, p - l))
+    }
+    x
+  }
+  
+  temp <- tempfile()
+  log_ <- getLog()
+  nrow_ <- max(unlist(lapply(log_, length)))
+  log_tbl <- data.frame(
+    user = rep(log_$user, nrow_),
+    course_name = rep(log_$course_name, nrow_),
+    lesson_name = rep(log_$lesson_name, nrow_),
+    question_number = p(log_$question_number, nrow_, NA),
+    correct = p(log_$correct, nrow_, NA),
+    attempt = p(log_$attempt, nrow_, NA),
+    skipped = p(log_$skipped, nrow_, NA),
+    datetime = p(log_$datetime, nrow_, NA),
+    stringsAsFactors = FALSE
+  )
+  write.csv(log_tbl, file = temp, row.names = FALSE)
+  encoded_log <- base64encode(temp)
+  
+  #  answer
+  input <- data.frame(Sys.time(), encoded_log)
+  sheet_append(
+    input, 
+    ss = "18Dy5fZVQWdOtPq_nS9y-aA7vbIKNOT-PYDlFYCdJXQo", 
+    sheet = "Respostas"
+  )
+  return(TRUE)
+}
+
+
+#------------------------------------------------------------------------------
+# Notificação por e-mail
 notify <- function() {
   e <- get("e", parent.frame())
   if(e$val == "No") return(TRUE)
