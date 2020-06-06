@@ -20,7 +20,7 @@
   Hint: ANS is correct.
 
 - Class: mult_question
-  Output: Gostaria de informar alguém sobre sua realização bem sucedida desta lição via e-mail?
+  Output: Você gostaria de enviar ao seu instrutor, o registro da sua conclusão bem sucedida desta lição via formulários Google? Isto o permitirá avaliar seu progresso.
   CorrectAnswer: Sim
   AnswerChoices: Sim; Não
   AnswerTests: notify()
