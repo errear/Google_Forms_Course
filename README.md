@@ -9,6 +9,7 @@ Este curso está em construção e você pode encontrar problemas durante a exec
 ```{r install-adar-errear}
 install.packages(c("devtools", "base64enc", "httr"))
 library(devtools)
+# Sys.unsetenv("GITHUB_PAT")
 install_github("swirldev/swirl", ref = "dev")
 library(swirl)
 install_course_github("errear", "adar-errear")
