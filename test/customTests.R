@@ -29,11 +29,11 @@ getLog <- function() {
 # source: https://github.com/tomatebio/Programando_em_R
 submit_log <- function() {
   
-  yn <- select.list(c("Sim", "Não"), graphics = FALSE)
-  if (yn == "Não") {
-    cat("Não será enviado")
-    return(TRUE)
-  }
+  # yn <- select.list(c("Sim", "Não"), graphics = FALSE)
+  # if (yn == "Não") {
+  #   cat("Não será enviado")
+  #   return(TRUE)
+  # }
   
   cat("Preparando o envio ...\n")
   library(googlesheets4)
@@ -74,7 +74,7 @@ submit_log <- function() {
     data = input, 
     # requer criação da planilha e que esteja com acesso liberado público
     ss = "1fY0qiNZEOICpiviqtW72VEwqFLPdk2EIkIg5vjSjxso", 
-    sheet = "Respostas-adar-errear"
+    sheet = "respostas"
   )
   return(TRUE)
 }
