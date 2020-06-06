@@ -1,0 +1,27 @@
+- Class: meta
+  Course: adar-errear
+  Lesson: test
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.4.5
+
+- Class: cmd_question
+  Output: Enter 2 + 2
+  CorrectAnswer: 2 + 2
+  AnswerTests: omnitest(correctExpr='2 + 2')
+  Hint: Type 2 + 2
+
+- Class: mult_question
+  Output: Type your text output here.
+  AnswerChoices: ANS;2;3
+  CorrectAnswer: ANS
+  AnswerTests: omnitest(correctVal='ANS')
+  Hint: ANS is correct.
+
+- Class: mult_question
+  Output: Gostaria de informar alguém sobre sua realização bem sucedida desta lição via e-mail?
+  CorrectAnswer: Sim
+  AnswerChoices: Sim; Não
+  AnswerTests: notify()
+  Hint: NULL
