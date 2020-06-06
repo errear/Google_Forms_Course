@@ -4,6 +4,5 @@
       # throughout the lesson.
 swirl::swirl_options(
   swirl_logging = TRUE, 
-  language = "portuguese", 
-  swirl_data_dir = "~/"
+  language = "portuguese"
 )
